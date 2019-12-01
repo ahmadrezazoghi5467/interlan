@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "987031531350",
+    "firebase_url": "https://inter-login-2222.firebaseio.com",
+    "project_id": "inter-login-2222",
+    "storage_bucket": "inter-login-2222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987031531350:android:e33d42ef13f93f5518b0f7",
+        "android_client_info": {
+          "package_name": "com.lms.fa.interlan.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987031531350-hs1ap12da2pegkut1939degnmo85enjp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lms.fa.interlan.app",
+            "certificate_hash": "155116b255a4a152f2b5166d99ecdb5da0ce1df4"
+          }
+        },
+        {
+          "client_id": "987031531350-a2kcdhuf74o863edgnium3rcr31g734b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7UOsF9YPrkDqTnIvEnn1U5z5rSDyp8Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987031531350-a2kcdhuf74o863edgnium3rcr31g734b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

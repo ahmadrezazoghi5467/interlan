@@ -1,0 +1,20 @@
+<ion-content>
+	 <ion-row>
+        <ion-col *ngIf="config.multisite.enable_multisite && config.multisite.sites.length">
+            <div class="select_site">
+                <ion-card  *ngFor="let site of config.multisite.sites; let i = index" [attr.data-index]="i" (click)="goToHome(i)">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-12 *ngIf="site.logo">
+                                <div class="featured_image" [ngStyle]="{ 'background-image':'url('+site.logo+')'}">
+                                    <lazy-img [inputSrc]="site.logo" [imgStyle]="style"></lazy-img>
+                                    <strong>{{site.site_name}}</strong>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card> 
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>

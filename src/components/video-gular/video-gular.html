@@ -1,0 +1,46 @@
+<div *ngIf="meta">
+    <div *ngIf="meta.audio && meta.audio.length" class="post_uri">
+        <div *ngFor="let audio of meta.audio">
+            <vg-player style="height: 50px;" (onPlayerReady)="onPlayerReady($event)" vg-responsive="true">
+                <vg-controls [vgAutohide]="false">
+                    <vg-play-pause></vg-play-pause>
+                    <vg-playback-button></vg-playback-button>
+                    <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                    <vg-scrub-bar>
+                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    </vg-scrub-bar>
+                    <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+                    <vg-mute></vg-mute>
+                </vg-controls>
+                <audio #media [vgMedia]="media" id="myAudio">
+                    <source [src]="audio" type="audio/mp3">
+                </audio>
+            </vg-player>
+        </div>
+    </div>
+    <div *ngIf="meta.video && meta.video.length" class="post_uri">
+        <div *ngFor="let video of meta.video">
+            <vg-player (onPlayerReady)="onPlayerReady($event)" vg-responsive="true">
+                <vg-controls [vgFor]="my-video" [vgAutohide]="true" [vgAutohideTime]="5">
+                    <vg-play-pause [vgFor]="my-video"></vg-play-pause>
+                    <vg-playback-button></vg-playback-button>
+                    <vg-time-display [vgFor]="my-video" vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                    <vg-scrub-bar [vgFor]="my-video">
+                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    </vg-scrub-bar>
+                    <vg-volume [vgFor]="my-video"></vg-volume>
+                    <vg-fullscreen></vg-fullscreen>
+                    <vg-overlay-play></vg-overlay-play>
+                </vg-controls>
+                <video #myMedia [vgMedia]="myMedia" id="my-video" [src]="video" type="video/mp4">
+                </video>
+            </vg-player>
+        </div>
+    </div>
+    <div *ngIf="meta.iframes && meta.iframes.length" class="post_uri">
+        <div *ngFor="let iframeUrl of meta.iframes">
+            <iframe *ngIf="!isObject(iframeUrl)" width="100%" height="100%" [src]="iframeUrl | safeUrl" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,11 @@
 /**
- * Check out https://googlechromelabs.github.io/sw-toolbox/ for
+ * Check out https://googlechrome.github.io/sw-toolbox/docs/master/index.html for
  * more info on how to use sw-toolbox to custom configure your service worker.
  */
-
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
 
 'use strict';
 importScripts('./build/sw-toolbox.js');
@@ -15,7 +18,6 @@ self.toolbox.options.cache = {
 self.toolbox.precache(
   [
     './build/main.js',
-    './build/vendor.js',
     './build/main.css',
     './build/polyfills.js',
     'index.html',
@@ -24,7 +26,7 @@ self.toolbox.precache(
 );
 
 // dynamically cache any other local assets
-self.toolbox.router.any('/*', self.toolbox.fastest);
+self.toolbox.router.any('/*', self.toolbox.cacheFirst);
 
 // for any other requests go to the network, cache,
 // and then only use that cached resource if your user goes offline

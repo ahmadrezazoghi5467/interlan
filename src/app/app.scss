@@ -1,6 +1,6 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
-
+@import '../assets/fonts/videogular2/videogular.css';
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +14,6 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+#logo{
+	padding:3rem;
+}
